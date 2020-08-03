@@ -1,0 +1,39 @@
+<h2 class="page-header"><%= house.location %></h2>
+<div class="house-details">
+    <div>
+        <img width="500" height="350" src="<%= house.houseImagePath %>">
+        <div class="house-details-btn-grid">
+            <a class="btn btn-primary" href="/houses/<%= house.id %>/edit">Edit</a>
+            <%- include('../partials/deleteForm', { url: `/houses/${house.id}` }) %>
+            <a class="btn btn-primary house-details-agent-button" href="/agents/<%= house.agent.id %>">View Agent</a>
+        </div>
+    </div>
+    <div class="house-details-grid">
+        <div class="house-details-label">Agent:</div>
+        <div><%= house.agent.name %></div>
+
+        <div class="house-details-label">Price:</div>
+        <div>$<%= house.price %></div>
+        
+        <div class="house-details-label">Number of Bedrooms:</div>
+        <div><%= house.numberOfBedrooms %></div>
+        
+        <div class="house-details-label">Number of Bathrooms:</div>
+        <div><%= house.numberOfBathrooms %></div>
+        
+        <div class="house-details-label">Year Built:</div>
+        <div><%= house.yearBuilt %></div>
+        
+        <div class="house-details-label">Type:</div>
+        <div><%= house.type %></div>
+        
+        <div class="house-details-label">Sqft:</div>
+        <div><%= house.Sqft %></div>
+        
+        <div class="house-details-label">Parking:</div>
+        <div><%= house.parking %></div>
+        
+        <div class="house-details-label">Description:</div>
+        <div><%= house.description %></div>
+    </div>
+</div>

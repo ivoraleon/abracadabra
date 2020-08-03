@@ -1,0 +1,67 @@
+<div class="form-row">
+    <div class="form-item">
+        <label>Location</label>
+        <input type="text" name="location" value="<%= house.location %>">
+    </div>
+</div>
+<div class="form-item">
+    <label>Agent</label>
+    <select name="agent">
+        <% agents.forEach(agent => { %>
+        <% if (agent.id === house.agent) { %>
+        <option selected label="<%= agent.name %>" value="<%= agent.id %>">
+            <% } else { %>
+        <option label="<%= agent.name %>" value="<%= agent.id %>">
+            <% } %>
+            <% }) %>
+    </select>
+</div>
+
+<div class="form-row">
+    <div class="form-item">
+        <label>Price</label>
+        <input type="number" name="price" id="price" value="<%= house.price %>">
+    </div>
+
+    <div class="form-item">
+        <label>Number of Bedrooms</label>
+        <input type="number" name="numberOfBedrooms" id="numberOfBedrooms" value="<%= house.numberOfBedrooms %>">
+    </div>
+
+    <div class="form-item">
+        <label>Number of Bathrooms</label>
+        <input type="number" name="numberOfBathrooms" id="numberOfBathrooms" value="<%= house.numberOfBathrooms %>">
+    </div>
+    
+    <div class="form-item">
+        <label>Year Built</label>
+        <input type="number" name="yearBuilt" id="yearBuilt" value="<%= house.yearBuilt %>">
+    </div>
+
+    <div class="form-item">
+        <label>Type</label>
+        <input type="text" name="type" id="type" value="<%= house.type %>">
+    </div>
+
+    <div class="form-item">
+        <label>Sqft</label>
+        <input type="number" name="Sqft" id="Sqft" value="<%= house.Sqft %>">
+    </div>
+    
+    <div class="form-item">
+        <label>Parking</label>
+        <input type="number" name="parking" id="parking" value="<%= house.parking %>">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-item form-item-no-grow">
+        <label>Picture</label>
+        <input type="file" name="image" class="filepond">
+    </div>
+
+    <div class="form-item">
+        <label>Description</label>
+        <textarea name="description"><%= house.description %></textarea>
+    </div>
+</div>

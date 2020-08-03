@@ -1,0 +1,60 @@
+:root {
+  --house-image-width: 200px;
+  --house-image-width-large: 325px;
+  --house-image-aspect-ratio: 0.75;
+}
+
+.house-image {
+  width: var(--house-image-width);
+  height: calc(var(--house-image-width) / var(--house-image-aspect-ratio));
+}
+
+.house-image-large {
+  --house-image-width: var(--house-image-width-large);
+}
+
+.house-grid {
+  display: grid;
+  justify-content: center;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, var(--house-image-width));
+}
+
+.house-grid-large {
+  grid-template-columns: repeat(auto-fill, var(--house-image-width-large));
+}
+
+.house-details {
+  display: flex;
+}
+
+.house-details-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.house-details-grid {
+  display: grid;
+  align-content: flex-start;
+  align-items: center;
+  grid-gap: 1rem;
+  grid-template-columns: auto auto;
+}
+
+.house-details-btn-grid {
+  display: grid;
+  justify-items: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-template-areas:
+    "edit delete"
+    "agent agent";
+  grid-gap: .5rem;
+  margin-top: .5rem;
+}
+
+.house-details-agent-button {
+  grid-area: agent;
+  justify-self: stretch;
+}

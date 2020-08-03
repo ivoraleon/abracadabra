@@ -1,0 +1,9 @@
+<h2 class="page-header"><%= agent.name %></h2>
+<div class="btn-row">
+  <a class="btn btn-primary" href="/agents/<%= agent.id %>/edit">Edit</a>
+  <%- include('../partials/deleteForm', { url: `/agents/${agent.id}` }) %>
+</div>
+<% if (housesByAgent.length > 0) { %>
+  <h2 class="page-header">Houses By Agent</h2>
+  <%- include('../partials/houseGrid', { houses: housesByAgent }) %>
+<% } %>

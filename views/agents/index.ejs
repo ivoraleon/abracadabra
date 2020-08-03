@@ -1,0 +1,23 @@
+<h2 class="page-header">Search Agents</h2>
+<form action="/agents" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Name</label>
+      <input type="text" name="name" value="<%= searchOptions.name %>">
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+<br>
+<% agents.forEach(agent => { %>
+  <div class="agent-row">
+    <div class="agent-name"><%= agent.name %></div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/agents/<%= agent.id %>">View</a>
+      <a class="btn btn-primary" href="/agents/<%= agent.id %>/edit">Edit</a>
+      <%- include('../partials/deleteForm', { url: `/agents/${agent.id}` }) %>
+    </div>
+  </div>
+<% }) %>

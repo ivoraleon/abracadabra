@@ -1,0 +1,10 @@
+<% houseImageClass = locals.large ? 'house-image-large' : '' %>
+<% houseGridClass = locals.large ? 'house-grid-large' : '' %>
+<div class="house-grid <%= houseGridClass %>">
+  <% houses.forEach(house => { %>
+    <a href="/houses/<%= house.id %>">
+      <h2 class="page-header"><%= house.location %></h2>
+      <img class="house-image <%= houseImageClass %>" src="<%= house.houseImagePath %>">
+    </a>
+  <% }) %>
+</div>
