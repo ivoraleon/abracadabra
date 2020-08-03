@@ -4,7 +4,7 @@ This is a full stack web application that allows a real estate agent to list his
 Technologies used:
 Database: MongoDB Atlas,
 Backend: Express js
-Frontend: EJS
+Frontend: EJS, HTML, CSS
 
 CSS Themes and font downloaded from online.
 
